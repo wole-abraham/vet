@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+      body, h1, h2, h3, h4, h5, h6, p, button, input, label, .navbar-logo, .navbar-links a, .link, .sub-text, select, .card, .service-card, .service-card-main, .our-services h3 {
+        font-family: 'Inter', 'Segoe UI', Arial, sans-serif !important;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+      }
+      .navbar-logo {
+        font-weight: 800;
+        font-size: 1.7em;
+      }
+      .services-title, .our-services h3 {
+        font-size: 2.2em;
+        font-weight: 700;
+      }
+      .main-hero h1, .hero-section h2 {
+        font-size: 2.7em;
+        font-weight: 800;
+      }
+      .main-hero p, .service-desc-clean, .link, .sub-text {
+        font-size: 1.15em;
+        font-weight: 400;
+      }
+      .book-now-btn-clean, .btn {
+        font-size: 1.08em;
+        font-weight: 600;
+      }
+      .service-title-clean, .card h3, .service-card h4 {
+        font-size: 1.35em;
+        font-weight: 700;
+      }
+      .custom-image-label {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: #27ae60;
+        font-size: 1.08em;
+        user-select: none;
+      }
+      .custom-image-btn {
+        background: #232b3b;
+        color: #fff;
+        border-radius: 8px;
+        padding: 8px 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1em;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: background 0.18s, color 0.18s;
+      }
+      .custom-image-btn:hover {
+        background: #27ae60;
+        color: #fff;
+      }
+      .image-filename {
+        color: #bfc9d8;
+        font-size: 0.98em;
+        font-style: italic;
+        margin-left: 4px;
+      }
+      .image-preview {
+        margin-top: 4px;
+        margin-bottom: 10px;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/solid.min.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+</head>
+
+<body>
+    <!-- Glassy Navbar -->
+    <nav class="glassy-navbar">
+      <div class="navbar-content">
+        <span class="navbar-logo">VetCare</span>
+        <ul class="navbar-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero-section">
+
+        <div class="hero-text">
+            <h2>
+                Compassionate Care for Your Beloved Pet
+            </h2>
+
+            <span class="link">
+                Find a Clinic Near you
+            </span>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="section-1">
+            <div class="card">
+                <i class="fa-regular fa-hospital" style="font-size: 3em;"></i>
+                <h3>
+                    Trusted Veterinary Experts with Years of Experience
+                </h3>
+                <span class="sub-text">
+                    <a href="http://" style="text-decoration: none; color: white;">
+                        Learn More
+                    </a>
+                </span>
+            </div>
+
+            <div class="our-services">
+                <h3>Our Services</h3>
+                <div class="service-card-main">
+
+              
+                <div class="service-card">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <h4>General Checkup</h4>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-syringe"></i>
+                    <h4>Vaccinations</h4>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <h4>Physiotherapy</h4>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-allergies"></i>
+                    <h4>Dermatology</h4>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <h4>Operation</h4>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-syringe"></i>
+                    <h4>Vaccinations</h4>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-syringe"></i>
+                    <h4>Vaccinations</h4>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-syringe"></i>
+                    <h4>Vaccinations</h4>
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section-2">
+            
+            <form action="http://127.0.0.1:8000/book/" method="post" enctype="multipart/form-data">
+                <h2>Book an Appointment</h2>
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="number" name="phone_number" placeholder="Phone Number" required>
+                <label for="pet-type">Pet Type</label>
+                <select name="type" id=""required>
+                    <option value="">Select Pet Type</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="reptile">Reptile</option>
+                </select>
+                <label for="doc">Service Required?</label>
+                <select name="doctor" id="" required>
+                     <option value="" disabled selected>Select Service Type</option>
+                     <option value="Vaccination">Vaccination</option>
+                    <option value="Physiotherapy">Physiotherapy</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Operation">Operation</option>
+                </select>
+                <label for="image" class="custom-image-label">
+                  <span class="custom-image-btn"><i class="fa fa-upload"></i> Upload Pet Image</span>
+                  <span id="image-filename" class="image-filename">No file chosen</span>
+                </label>
+                <input type="file" name='image' id="image" accept="image/*" required style="display:none;">
+                <div id="image-preview" class="image-preview" style="display:none;"></div>
+                <input type="text" name="reason" placeholder="Reason for Visit" required>
+                <label for="datePicker">Choose a date and Time:</label>
+                <input type="text" id="dateTimePicker" name="appointment_date" placeholder="Select a date" required>
+                <button class="btn" type="submit"><i class="animation"></i>SUBMIT<i class="animation"></i></button>
+            </form>
+        </div>
+
+    </div>
+
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      flatpickr("#dateTimePicker", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        time_24hr: true,
+        minuteIncrement: 15
+      });
+
+      function attachBookingFormHandler() {
+        const form = document.querySelector('form[action="http://127.0.0.1:8000/book/"]');
+        if (form) {
+          form.addEventListener('submit', handleBookingSubmit);
+          // Custom image field logic
+          const imageInput = form.querySelector('#image');
+          const imageLabel = form.querySelector('.custom-image-label');
+          const imageBtn = form.querySelector('.custom-image-btn');
+          const imageFilename = form.querySelector('#image-filename');
+          const imagePreview = form.querySelector('#image-preview');
+          if (imageLabel && imageInput) {
+            imageLabel.addEventListener('click', function(e) {
+              if (e.target === imageBtn || e.target === imageLabel) {
+                imageInput.click();
+              }
+            });
+          }
+          if (imageInput) {
+            imageInput.addEventListener('change', function() {
+              if (imageInput.files && imageInput.files[0]) {
+                imageFilename.textContent = imageInput.files[0].name;
+                // Show preview
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                  imagePreview.style.display = 'block';
+                  imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview" style="max-width:120px; max-height:120px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.10); margin-top:8px;">`;
+                };
+                reader.readAsDataURL(imageInput.files[0]);
+              } else {
+                imageFilename.textContent = 'No file chosen';
+                imagePreview.style.display = 'none';
+                imagePreview.innerHTML = '';
+              }
+            });
+          }
+        }
+      }
+
+
+      async function handleBookingSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const section2 = document.querySelector('.section-2');
+        // Save current form values (except file)
+        const formValues = {};
+        for (const el of form.elements) {
+          if (el.name && el.type !== 'file') {
+            formValues[el.name] = el.value;
+          }
+        }
+        const formHTML = `
+          <form action=\"http://127.0.0.1:8000/book/\" method=\"post\" enctype=\"multipart/form-data\">\n                  <h2>Book an Appointment</h2>\n                  <input type=\"text\" name=\"first_name\" placeholder=\"First Name\" required value=\"${formValues.first_name ? formValues.first_name.replace(/"/g, '&quot;') : ''}\">\n                  <input type=\"text\" name=\"last_name\" placeholder=\"Last Name\" required value=\"${formValues.last_name ? formValues.last_name.replace(/"/g, '&quot;') : ''}\">\n                  <input type=\"email\" name=\"email\" placeholder=\"Email\" required value=\"${formValues.email ? formValues.email.replace(/"/g, '&quot;') : ''}\">\n                  <input type=\"number\" name=\"phone_number\" placeholder=\"Phone Number\" required value=\"${formValues.phone_number ? formValues.phone_number.replace(/"/g, '&quot;') : ''}\">\n                  <label for=\"pet-type\">Pet Type</label>\n                  <select name=\"type\" id=\"\" required>\n                      <option value=\"\">Select Pet Type</option>\n                      <option value=\"dog\"${formValues.type==='dog'?' selected':''}>Dog</option>\n                      <option value=\"cat\"${formValues.type==='cat'?' selected':''}>Cat</option>\n                      <option value=\"bird\"${formValues.type==='bird'?' selected':''}>Bird</option>\n                      <option value=\"reptile\"${formValues.type==='reptile'?' selected':''}>Reptile</option>\n                  </select>\n                  <label for=\"doc\">Service Required?</label>\n                  <select name=\"doctor\" id=\"\" required>\n                       <option value=\"\" disabled${!formValues.doctor?' selected':''}>Select Service Type</option>\n                       <option value=\"Vaccination\"${formValues.doctor==='Vaccination'?' selected':''}>Vaccination</option>\n                      <option value=\"Physiotherapy\"${formValues.doctor==='Physiotherapy'?' selected':''}>Physiotherapy</option>\n                      <option value=\"Dermatology\"${formValues.doctor==='Dermatology'?' selected':''}>Dermatology</option>\n                      <option value=\"Operation\"${formValues.doctor==='Operation'?' selected':''}>Operation</option>\n                  </select>\n                  <label for=\"image\" style=\"display: block;\">Image</label>\n                  <input type=\"file\" name='image' id=\"image\" accept=\"image/*\">\n                  <input type=\"text\" name=\"reason\" placeholder=\"Reason for Visit\" required value=\"${formValues.reason ? formValues.reason.replace(/"/g, '&quot;') : ''}\">\n                  <label for=\"datePicker\">Choose a date and Time:</label>\n                  <input type=\"text\" id=\"dateTimePicker\" name=\"appointment_date\" placeholder=\"Select a date\" required value=\"${formValues.appointment_date ? formValues.appointment_date.replace(/"/g, '&quot;') : ''}\">\n                  <button class=\"btn\" type=\"submit\"><i class=\"animation\"></i>SUBMIT<i class=\"animation\"></i></button>\n              </form>\n        `;
+        let data;
+        let response;
+        try {
+          response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+          });
+          try {
+            data = await response.json();
+          } catch (e) {
+            data = {};
+          }
+        } catch (e) {
+          data = {};
+          response = { ok: false };
+        }
+        if (response.ok) {
+          if (section2) {
+            section2.innerHTML = `
+              <div class=\"success-message-modern\" style=\"display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:350px; height:100%; width:100%; background:#111; color:#fff; border-radius:20px; box-shadow:0 8px 32px rgba(0,0,0,0.25);\">\n  <h2 style=\"font-size:2em; font-weight:700; margin-bottom:10px;\">Appointment Booked!</h2>\n  <p style=\"font-size:1.2em; margin-bottom:30px;\">An email will be sent for confirmation.</p>\n  <button id=\"backToForm\" style=\"padding:12px 32px; font-size:1em; border-radius:8px; border:none; background:#fff; color:#111; font-weight:600; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.12); transition:background 0.2s;\">Back</button>\n</div>\n`;
+            const backBtn = section2.querySelector('#backToForm');
+            if (backBtn) {
+              backBtn.addEventListener('click', function() {
+                section2.innerHTML = formHTML;
+                flatpickr("#dateTimePicker", {
+                  enableTime: true,
+                  dateFormat: "Y-m-d H:i",
+                  time_24hr: true,
+                  minuteIncrement: 15
+                });
+                attachBookingFormHandler();
+              });
+            }
+          }
+        } else {
+          // Show error card
+          let errorMsg = data && data.detail ? data.detail : 'Error booking appointment. Please try again.';
+          if (section2) {
+            section2.innerHTML = `
+              <div class=\"error-message-modern\" style=\"display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:350px; height:100%; width:100%; background:#2c1a1a; color:#fff; border-radius:20px; box-shadow:0 8px 32px rgba(200,0,0,0.18);\">\n  <h2 style=\"font-size:2em; font-weight:700; margin-bottom:10px; color:#e74c3c;\">Booking Failed</h2>\n  <p style=\"font-size:1.2em; margin-bottom:30px; color:#ffd6d6;\">${errorMsg}</p>\n  <button id=\"backToForm\" style=\"padding:12px 32px; font-size:1em; border-radius:8px; border:none; background:#fff; color:#2c1a1a; font-weight:600; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.12); transition:background 0.2s;\">Back</button>\n</div>\n`;
+            const backBtn = section2.querySelector('#backToForm');
+            if (backBtn) {
+              backBtn.addEventListener('click', function() {
+                section2.innerHTML = formHTML;
+                flatpickr("#dateTimePicker", {
+                  enableTime: true,
+                  dateFormat: "Y-m-d H:i",
+                  time_24hr: true,
+                  minuteIncrement: 15
+                });
+                attachBookingFormHandler();
+              });
+            }
+          }
+        }
+      }
+
+      attachBookingFormHandler();
+    });
+</script>
+
+</body>
+
+</html>

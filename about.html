@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | VetCare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/solid.min.css">
+    <style>
+      body {
+        background: linear-gradient(120deg, #eaf6fb 60%, #d4f5e9 100%);
+      }
+      .about-hero {
+        position: relative;
+        min-height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: url('hero-image.jpg') center/cover no-repeat;
+        margin-bottom: 0;
+      }
+      .about-hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(255,255,255,0.7);
+        backdrop-filter: blur(6px);
+        z-index: 1;
+      }
+      .about-hero-content {
+        position: relative;
+        z-index: 2;
+        background: rgba(255,255,255,0.45);
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(39,174,96,0.10);
+        padding: 48px 32px 36px 32px;
+        max-width: 600px;
+        margin: 40px auto 0 auto;
+        backdrop-filter: blur(2px);
+      }
+      .about-hero-content h1 {
+        font-size: 2.8em;
+        color: #27ae60;
+        margin-bottom: 16px;
+        font-weight: 900;
+        letter-spacing: 0.01em;
+      }
+      .about-hero-content p {
+        color: #2d3a4a;
+        font-size: 1.22em;
+        line-height: 1.7;
+        margin-bottom: 0;
+      }
+      .about-section {
+        max-width: 900px;
+        margin: 56px auto 0 auto;
+        padding: 0 18px;
+        text-align: center;
+      }
+      .about-section h2 {
+        color: #27ae60;
+        font-size: 2.1em;
+        margin-bottom: 16px;
+        font-weight: 800;
+      }
+      .about-section p {
+        color: #2d3a4a;
+        font-size: 1.13em;
+        line-height: 1.8;
+        margin-bottom: 28px;
+      }
+      .team-section {
+        max-width: 1100px;
+        margin: 64px auto 0 auto;
+        padding: 0 18px 60px 18px;
+      }
+      .team-title {
+        color: #27ae60;
+        font-size: 2.2em;
+        text-align: center;
+        margin-bottom: 36px;
+        font-weight: 800;
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 40px;
+      }
+      .team-card {
+        background: rgba(255,255,255,0.55);
+        border-radius: 22px;
+        box-shadow: 0 8px 32px rgba(39,174,96,0.10);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 38px 22px 28px 22px;
+        border: 1.5px solid #eaf6fb;
+        text-align: center;
+        position: relative;
+        transition: box-shadow 0.22s, transform 0.22s, background 0.22s;
+        backdrop-filter: blur(2px);
+        overflow: hidden;
+      }
+      .team-card:hover {
+        box-shadow: 0 16px 48px rgba(39,174,96,0.18);
+        transform: translateY(-6px) scale(1.025);
+        background: rgba(255,255,255,0.85);
+      }
+      .team-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 18px;
+        border: 3px solid #27ae60;
+        box-shadow: 0 2px 8px rgba(39,174,96,0.10);
+      }
+      .team-card h4 {
+        font-size: 1.22em;
+        font-weight: 800;
+        color: #2d3a4a;
+        margin-bottom: 6px;
+      }
+      .team-card span {
+        color: #27ae60;
+        font-size: 1.05em;
+        font-weight: 600;
+        margin-bottom: 12px;
+        display: block;
+      }
+      .team-card p {
+        color: #5a7a8c;
+        font-size: 1.05em;
+        margin-bottom: 18px;
+      }
+      .team-social {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin-top: auto;
+      }
+      .team-social a {
+        color: #27ae60;
+        font-size: 1.25em;
+        transition: color 0.18s, transform 0.18s;
+      }
+      .team-social a:hover {
+        color: #1a5cff;
+        transform: scale(1.18);
+      }
+      @media (max-width: 700px) {
+        .about-hero-content {
+          padding: 28px 8px 18px 8px;
+        }
+        .about-hero-content h1 {
+          font-size: 2em;
+        }
+        .about-section h2, .team-title {
+          font-size: 1.3em;
+        }
+        .team-grid {
+          gap: 18px;
+        }
+        .team-card {
+          padding: 18px 8px 12px 8px;
+        }
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans text-base md:text-lg">
+    <!-- Glassy Navbar -->
+    <nav class="glassy-navbar">
+      <div class="navbar-content">
+        <span class="navbar-logo">VetCare</span>
+        <ul class="navbar-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+ 
+        </ul>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-100 to-blue-100 py-16 px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-green-700 mb-4">About VetCare</h1>
+      <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-700">
+        Welcome to VetCare! We’re passionate animal lovers, innovative caregivers, and your partners in pet health. Discover our story, our values, and the people who make us unique.
+      </p>
+    </section>
+    <!-- About Section -->
+    <section class="about-section">
+      <h2>Our Mission & Values</h2>
+      <p>At VetCare, our mission is to provide the highest standard of veterinary care in a warm, welcoming environment. We believe every pet deserves personalized attention, advanced medical treatment, and a gentle touch. Our values are rooted in compassion, integrity, and a commitment to lifelong learning.</p>
+      <p>We strive to build lasting relationships with our clients and their pets, ensuring every visit is a positive experience. From preventive care to advanced surgery, we are here for every stage of your pet’s life.</p>
+    </section>
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="team-title">Meet Our Team</div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Jane Smith, Chief Veterinarian">
+          <h4>Dr. Jane Smith</h4>
+          <span>Chief Veterinarian</span>
+          <p>With over 15 years of experience, Dr. Smith leads our clinic with expertise and compassion for every animal.</p>
+          <div class="team-social">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. John Doe, Veterinary Surgeon">
+          <h4>Dr. John Doe</h4>
+          <span>Veterinary Surgeon</span>
+          <p>Specializing in surgery and emergency care, Dr. Doe is dedicated to the health and recovery of your pets.</p>
+          <div class="team-social">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Lee, Veterinary Nurse">
+          <h4>Sarah Lee</h4>
+          <span>Veterinary Nurse</span>
+          <p>Sarah’s gentle approach and attention to detail ensure every pet feels safe and cared for during their visit.</p>
+          <div class="team-social">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-links">
+        <a href="index.html">Home</a>|
+        <a href="services.html">Services</a>|
+        <a href="about.html">About</a>|
+        <a href="#contact">Contact</a>
+      </div>
+      <small>&copy; 2024 VetCare. All rights reserved.</small>
+    </footer>
+</body>
+</html>
