@@ -18,7 +18,7 @@ async def lifespan(app: FastAPI):
     yield
     print("shutting down")
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan,root_path="/api")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Replace * with specific origins in production
