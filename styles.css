@@ -1,0 +1,172 @@
+
+.container {
+    width: 100%;
+    margin: 0px;
+}
+
+.hero-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    
+}
+
+
+.hero-section h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-section a {
+    text-decoration: none;
+    color: white;
+    background-color: orange;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.text-section {
+    align-items: center;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.image-section {
+    border: 2px solid rgb(20, 19, 52);
+    padding: 8px;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.image-section img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+     margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #0e1d40;
+    
+}
+
+.card { 
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    align-content: center;
+    height: 400px;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+
+
+.outer {
+    border: 2px solid rgb(161, 17, 17);
+    
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+}
+
+.card-title {
+
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.card p{
+    font-size: 18px;
+    width: 70%;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-right: auto;
+}
+.card a {
+    font-size: 15px;
+}
+
+.paw-icon {
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-right: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+}
+
+
+
+.team {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+.team a{
+    text-decoration: none;
+    margin-bottom: 50px;
+}
+
+.team h3  {
+    font-size: 25px;
+    text-align: center;
+}
+.team p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.text-section{
+    text-align: center;
+}
+
+.text-section .card-title {
+
+    color: red;
+    font-weight:600;
+}
+
+
+.text-section a{
+    background-color: orange;
+    padding: 10px;
+    border-radius: 10px;
+  
+
+}
+
+
+.services-section {
+text-align: center;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+.card {
+    text-align: center;
+}
+
+
+.services-section .card{
+    width: 50%;
+}

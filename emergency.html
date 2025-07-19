@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vetcare
- Veterinary Center</title>
+  <title>Emergency Care | VetCare Veterinary Center</title>
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -59,7 +58,10 @@
       border-radius: 12px;
       padding: 0.5rem 0;
       margin-top: 0.5rem;
+      opacity: 0;
+      transform: translateY(-10px);
       transition: all 0.3s ease;
+      display: none;
     }
     
     .dropdown-item {
@@ -116,15 +118,6 @@
       border-radius: 15px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    .feature-card {
-      border-radius: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      min-height: 220px;
-    }
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
     .bg-dark-blue {
       background: #0d1b3f;
     }
@@ -134,8 +127,38 @@
       padding: 0.5rem 0;
       font-size: 1rem;
     }
-    .testimonial-section {
-      padding: 2rem 0 1rem 0;
+    .emergency-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      height: 100%;
+      border-left: 5px solid #dc3545;
+    }
+    .emergency-icon {
+      width: 60px;
+      height: 60px;
+      background: #dc3545;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .emergency-banner {
+      background: linear-gradient(135deg, #dc3545, #c82333);
+      color: white;
+      padding: 2rem 0;
+    }
+    .symptom-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #ffc107;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -162,7 +185,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item">
-            <a class="nav-link active fw-semibold" href="index.html">
+            <a class="nav-link fw-semibold" href="index.html">
               <i class="bi bi-house-door me-1"></i>Home
             </a>
           </li>
@@ -172,12 +195,14 @@
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-semibold" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active fw-semibold" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="bi bi-gear me-1"></i>Services
             </a>
             <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="servicesDropdown">
               <li><a class="dropdown-item" href="services.html"><i class="bi bi-clipboard2-pulse me-2"></i>Veterinary Services</a></li>
-              <li><a class="dropdown-item" href="emergency.html"><i class="bi bi-exclamation-triangle me-2"></i>Emergency Care</a></li>
+              <li><a class="dropdown-item active" href="emergency.html"><i class="bi bi-exclamation-triangle me-2"></i>Emergency Care</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="pharmacy.html"><i class="bi bi-capsule me-2"></i>Online Pharmacy</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -205,220 +230,197 @@
     </div>
   </nav>
 
-  <!-- Announcement Bar -->
-  <div class="announcement-bar text-center">
-    <span class="me-2"><i class="bi bi-info-circle"></i></span>
-    New clients welcome! Limited time free first exam (<a href="#" class="text-white text-decoration-underline">terms apply</a>) – <a href="#" class="text-white fw-bold text-decoration-underline">Book Now!</a>
+  <!-- Emergency Banner -->
+  <div class="emergency-banner text-center">
+    <div class="container">
+      <h1 class="fw-bold mb-3">24/7 Emergency Veterinary Care</h1>
+      <p class="mb-4">Immediate medical attention for your pet when every minute counts</p>
+      <div class="d-flex justify-content-center align-items-center flex-wrap">
+        <div class="me-4 mb-2">
+          <i class="bi bi-telephone-fill me-2"></i>
+          <span class="fw-bold">Emergency: (410) 555-9999</span>
+        </div>
+        <div class="mb-2">
+          <i class="bi bi-geo-alt-fill me-2"></i>
+          <span class="fw-bold">123 Veterinary Drive, Upper Vetcare, MD</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Hero Section -->
-  <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <div class="mb-3">
-            <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold">
-              <i class="bi bi-star-fill me-1"></i>Trusted Since 1995
-            </span>
-          </div>
-          <h1 class="display-4 fw-bold mb-3 text-dark">
-            Exceptional Care for Your 
-            <span class="text-warning">Beloved Pets</span>
-          </h1>
-          <p class="lead mb-4 text-muted">
-            At VetCare Veterinary Center, we provide compassionate, comprehensive veterinary care with state-of-the-art technology. Your pet's health and happiness are our top priorities.
-          </p>
-          <div class="d-flex flex-wrap gap-3 mb-4">
-            <div class="d-flex align-items-center">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="fw-semibold">24/7 Emergency Care</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="fw-semibold">Advanced Diagnostics</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="fw-semibold">Compassionate Team</span>
-            </div>
-          </div>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="booking.html" class="btn btn-warning btn-lg fw-bold px-4 py-3 rounded-pill shadow">
-              <i class="bi bi-calendar-check me-2"></i>Book Appointment
-            </a>
-            <a href="emergency.html" class="btn btn-outline-danger btn-lg fw-bold px-4 py-3 rounded-pill">
-              <i class="bi bi-exclamation-triangle me-2"></i>Emergency Care
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-6 text-center position-relative">
-          <div class="position-relative">
-            <img src="https://images.unsplash.com/photo-1587764379873-97837921fd44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Veterinarian caring for a happy dog" 
-                 class="img-fluid rounded-4 shadow-lg" 
-                 style="max-height: 500px; object-fit: cover;">
-            <div class="position-absolute top-0 start-0 bg-warning text-dark p-3 rounded-3 m-3 shadow">
-              <div class="fw-bold">500+</div>
-              <div class="small">Happy Pets</div>
-            </div>
-            <div class="position-absolute bottom-0 end-0 bg-primary text-white p-3 rounded-3 m-3 shadow">
-              <div class="fw-bold">25+</div>
-              <div class="small">Years Experience</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonial-section bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h3 class="fw-bold mb-4">Real Testimonials from Real Clients</h3>
-          <div class="d-flex justify-content-center align-items-center mb-3">
-            <button class="btn btn-outline-secondary btn-sm me-2" disabled>&lt;</button>
-            <div class="px-3">
-              <p class="mb-1">All the pals and staff are the best, great customer service. They make sure you and your pet are well taken care of when you come into the office. I recommend Vetcare
-. Thank you, Vetcare
-.</p>
-              <div class="fw-bold">Marie V.</div>
-              <div class="text-muted" style="font-size:0.9rem;">Reviewed via Google</div>
-            </div>
-            <button class="btn btn-outline-secondary btn-sm ms-2">&gt;</button>
-          </div>
-          <a href="#" class="btn btn-warning">More Reviews &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature Cards -->
-  <section class="py-5 bg-dark-blue">
-    <div class="container">
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <div class="feature-card bg-white p-4 text-center h-100">
-            <div class="feature-icon text-danger mb-2">
-              <i class="bi bi-heart-pulse"></i>
-            </div>
-            <h5 class="fw-bold">Veterinary Services</h5>
-            <p>Diagnostics, surgery, anesthesia, radiology, and more.</p>
-            <a href="#" class="btn btn-outline-warning btn-sm">View Services &rarr;</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card bg-white p-4 text-center h-100">
-            <div class="feature-icon text-primary mb-2">
-              <i class="bi bi-phone"></i>
-            </div>
-            <h5 class="fw-bold">Our Mobile App</h5>
-            <p>Book appointments, get reminders, and more.</p>
-            <a href="#" class="btn btn-outline-warning btn-sm">Get Our App &rarr;</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card bg-white p-4 text-center h-100">
-            <div class="feature-icon text-info mb-2">
-              <i class="bi bi-hospital"></i>
-            </div>
-            <h5 class="fw-bold">Emergency Care</h5>
-            <p>Immediate and effective pet emergency care.</p>
-            <a href="#" class="btn btn-outline-warning btn-sm">Learn More &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Meet the Team Section -->
   <section class="py-5" style="background: #f5f6fa;">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-7 mb-4 mb-md-0">
-          <div class="mb-2 text-danger fw-bold">Meet Our Veterinary Team</div>
-          <h2 class="fw-bold mb-3">Meet the Vetcare
- Veterinary Center Veterinary Team</h2>
-          <p class="mb-4">Our dedicated team is committed to delivering quality veterinary care tailored to the unique needs of your furry family member. With a focus on compassion and client education, we treat your pet as if they were our own, providing personalized attention to address any concerns you may have. Trust us to be your partner in your pet's lifelong wellness journey.</p>
-          <a href="#" class="btn btn-warning fw-bold">Meet Our Team &rarr;</a>
+          <h2 class="fw-bold mb-3">Emergency Veterinary Services</h2>
+          <p class="mb-4">When your pet needs immediate medical attention, our emergency veterinary team is here 24/7 to provide critical care. We understand that emergencies don't wait for business hours.</p>
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-clock text-danger me-2" style="font-size: 1.5rem;"></i>
+            <span class="text-muted">Available 24 hours, 7 days a week</span>
+          </div>
+          <a href="tel:4105559999" class="btn btn-danger fw-bold me-3">
+            <i class="bi bi-telephone me-2"></i>Call Emergency
+          </a>
+          <a href="contact.html" class="btn btn-outline-primary fw-bold">Get Directions</a>
         </div>
         <div class="col-md-5 text-center">
-          <img src="images/labor-union-members-working-together.jpg" alt="Team Photo" class="img-fluid rounded border" style="border-width:3px !important;">
+          <img src="images/close-up-veterinarian-taking-care-dog.jpg" alt="Emergency Care" class="hero-img img-fluid">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Veterinary Services Section -->
-  <section class="py-5" style="background: #5a5a5a;">
+  <!-- Emergency Services Section -->
+  <section class="py-5">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 mb-4 mb-lg-0 text-center position-relative">
-          <img src="images/businesspeople-meeting-office-hand-shake.jpg" alt="Service Photo" class="img-fluid rounded">
-          <a href="#" class="btn btn-warning fw-bold position-absolute" style="bottom: 20px; left: 50%; transform: translateX(-50%); border-radius: 50px; padding: 0.7rem 1.5rem; white-space: nowrap;">View All Services</a>
+      <h3 class="fw-bold text-center mb-5">Emergency Services We Provide</h3>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="emergency-card text-center">
+            <div class="emergency-icon">
+              <i class="bi bi-heart-pulse"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Critical Care</h5>
+            <p>Advanced life support, monitoring, and intensive care for critically ill pets.</p>
+          </div>
         </div>
-        <div class="col-lg-7">
-          <h3 class="fw-bold text-white mb-2">Veterinary Services in Upper Vetcare
-, MD</h3>
-          <p class="text-white mb-4"><span class="fw-bold">Vetcare
- Veterinary Center</span> is a well-established full-service small animal veterinary hospital, providing comprehensive medical, surgical, and dental care.</p>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="bg-white rounded shadow-sm d-flex align-items-center p-3 mb-2" style="min-height: 80px;">
-                <span class="me-3 fs-2 text-danger"><i class="bi bi-clipboard2-pulse"></i></span>
-                <div>
-                  <div class="fw-bold">Pet Diagnostic and Therapeutic</div>
-                </div>
-              </div>
+        <div class="col-md-4">
+          <div class="emergency-card text-center">
+            <div class="emergency-icon">
+              <i class="bi bi-bandaid"></i>
             </div>
-            <div class="col-md-6">
-              <div class="bg-white rounded shadow-sm d-flex align-items-center p-3 mb-2" style="min-height: 80px;">
-                <span class="me-3 fs-2 text-info"><i class="bi bi-bandaid"></i></span>
-                <div>
-                  <div class="fw-bold">Pet Surgical</div>
-                </div>
-              </div>
+            <h5 class="fw-bold mb-3">Emergency Surgery</h5>
+            <p>Immediate surgical intervention for trauma, foreign body removal, and life-threatening conditions.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="emergency-card text-center">
+            <div class="emergency-icon">
+              <i class="bi bi-droplet"></i>
             </div>
-            <div class="col-md-6">
-              <div class="bg-white rounded shadow-sm d-flex align-items-center p-3 mb-2" style="min-height: 80px;">
-                <span class="me-3 fs-2 text-warning"><i class="bi bi-emoji-smile"></i></span>
-                <div>
-                  <div class="fw-bold">Pet Dentistry</div>
-                </div>
-              </div>
+            <h5 class="fw-bold mb-3">Blood Transfusions</h5>
+            <p>Emergency blood transfusions and fluid therapy for pets in critical condition.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="emergency-card text-center">
+            <div class="emergency-icon">
+              <i class="bi bi-x-ray"></i>
             </div>
-            <div class="col-md-6">
-              <div class="bg-white rounded shadow-sm d-flex align-items-center p-3 mb-2" style="min-height: 80px;">
-                <span class="me-3 fs-2 text-primary"><i class="bi bi-x-ray"></i></span>
-                <div>
-                  <div class="fw-bold">Pet Radiology Services</div>
-                </div>
-              </div>
+            <h5 class="fw-bold mb-3">Emergency Diagnostics</h5>
+            <p>X-rays, ultrasounds, and laboratory testing available 24/7 for rapid diagnosis.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="emergency-card text-center">
+            <div class="emergency-icon">
+              <i class="bi bi-shield-check"></i>
             </div>
+            <h5 class="fw-bold mb-3">Poisoning Treatment</h5>
+            <p>Immediate treatment for toxic exposures and poisoning emergencies.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="emergency-card text-center">
+            <div class="emergency-icon">
+              <i class="bi bi-thermometer-half"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Trauma Care</h5>
+            <p>Comprehensive trauma care for accidents, falls, and injury-related emergencies.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Join Our Team Section -->
-  <section class="py-5" style="background: #fcfcfc;">
+  <!-- Emergency Symptoms Section -->
+  <section class="py-5 bg-dark-blue text-white">
     <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-5 text-center mb-4 mb-md-0">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-               alt="Veterinary team collaboration" 
-               class="img-fluid rounded-4 shadow-lg" 
-               style="max-height: 400px; object-fit: cover;">
+      <h3 class="fw-bold text-center mb-5">When to Seek Emergency Care</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-4 text-warning">Immediate Emergency Signs</h5>
+          <div class="symptom-card text-dark">
+            <h6 class="fw-bold"><i class="bi bi-exclamation-triangle text-danger me-2"></i>Difficulty Breathing</h6>
+            <p class="mb-0">Rapid breathing, open-mouth breathing, or blue gums</p>
+          </div>
+          <div class="symptom-card text-dark">
+            <h6 class="fw-bold"><i class="bi bi-exclamation-triangle text-danger me-2"></i>Severe Bleeding</h6>
+            <p class="mb-0">Uncontrolled bleeding or blood in urine/stool</p>
+          </div>
+          <div class="symptom-card text-dark">
+            <h6 class="fw-bold"><i class="bi bi-exclamation-triangle text-danger me-2"></i>Collapse or Unconsciousness</h6>
+            <p class="mb-0">Pet unable to stand or unresponsive</p>
+          </div>
+          <div class="symptom-card text-dark">
+            <h6 class="fw-bold"><i class="bi bi-exclamation-triangle text-danger me-2"></i>Seizures</h6>
+            <p class="mb-0">Multiple seizures or seizures lasting more than 3 minutes</p>
+          </div>
         </div>
         <div class="col-md-6">
-          <div class="d-flex align-items-center mb-3">
-            <span class="me-2" style="font-size:2.5rem;color:#f7c873;"><i class="bi bi-paw"></i></span>
-            <h2 class="fw-bold mb-0">Join Our Team</h2>
+          <h5 class="fw-bold mb-4 text-warning">Urgent Care Signs</h5>
+          <div class="symptom-card text-dark">
+            <h6 class="fw-bold"><i class="bi bi-exclamation-circle text-warning me-2"></i>Vomiting or Diarrhea</h6>
+            <p class="mb-0">Severe, persistent, or bloody vomiting/diarrhea</p>
           </div>
-          <p class="mb-4">We're looking for passionate pet lovers, including veterinarians, technicians, administrative staff, and management. Join our team and help shape our amazing culture.</p>
-          <a href="#" class="btn btn-warning fw-bold">View Open Positions &rarr;</a>
+          <div class="symptom-card text-dark">
+            <h6 class="fw-bold"><i class="bi bi-exclamation-circle text-warning me-2"></i>Lethargy</h6>
+            <p class="mb-0">Extreme tiredness or unwillingness to move</p>
+          </div>
+          <div class="symptom-card text-dark">
+            <h6 class="fw-bold"><i class="bi bi-exclamation-circle text-warning me-2"></i>Loss of Appetite</h6>
+            <p class="mb-0">Not eating for more than 24 hours</p>
+          </div>
+          <div class="symptom-card text-dark">
+            <h6 class="fw-bold"><i class="bi bi-exclamation-circle text-warning me-2"></i>Pain or Discomfort</h6>
+            <p class="mb-0">Whining, crying, or unusual behavior indicating pain</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Do Section -->
+  <section class="py-5">
+    <div class="container">
+      <h3 class="fw-bold text-center mb-5">What to Do in an Emergency</h3>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="text-center">
+            <div class="bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+              <i class="bi bi-telephone text-white" style="font-size: 2rem;"></i>
+            </div>
+            <h5 class="fw-bold">1. Call Us</h5>
+            <p>Call our emergency line immediately: (410) 555-9999</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="text-center">
+            <div class="bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+              <i class="bi bi-shield-check text-white" style="font-size: 2rem;"></i>
+            </div>
+            <h5 class="fw-bold">2. Stay Calm</h5>
+            <p>Keep your pet calm and comfortable while preparing to transport</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="text-center">
+            <div class="bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+              <i class="bi bi-car-front text-white" style="font-size: 2rem;"></i>
+            </div>
+            <h5 class="fw-bold">3. Transport Safely</h5>
+            <p>Use a carrier or secure your pet safely for transportation</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="text-center">
+            <div class="bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+              <i class="bi bi-heart-pulse text-white" style="font-size: 2rem;"></i>
+            </div>
+            <h5 class="fw-bold">4. Get Treatment</h5>
+            <p>Our emergency team will provide immediate care upon arrival</p>
+          </div>
         </div>
       </div>
     </div>
@@ -559,8 +561,28 @@
       });
     });
 
-    // Bootstrap dropdown will handle the behavior automatically
-    // No custom JavaScript needed for dropdown functionality
+    // Enhanced dropdown animations
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      const menu = dropdown.querySelector('.dropdown-menu');
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      
+      toggle.addEventListener('mouseenter', function() {
+        menu.style.display = 'block';
+        setTimeout(() => {
+          menu.style.opacity = '1';
+          menu.style.transform = 'translateY(0)';
+        }, 10);
+      });
+      
+      dropdown.addEventListener('mouseleave', function() {
+        menu.style.opacity = '0';
+        menu.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          menu.style.display = 'none';
+        }, 200);
+      });
+    });
   </script>
 </body>
-</html>
+</html> 

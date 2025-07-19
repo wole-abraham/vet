@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vetcare
- Veterinary Center</title>
+  <title>Client Center | VetCare Veterinary Center</title>
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -59,7 +58,10 @@
       border-radius: 12px;
       padding: 0.5rem 0;
       margin-top: 0.5rem;
+      opacity: 0;
+      transform: translateY(-10px);
       transition: all 0.3s ease;
+      display: none;
     }
     
     .dropdown-item {
@@ -116,15 +118,6 @@
       border-radius: 15px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    .feature-card {
-      border-radius: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      min-height: 220px;
-    }
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
     .bg-dark-blue {
       background: #0d1b3f;
     }
@@ -134,8 +127,47 @@
       padding: 0.5rem 0;
       font-size: 1rem;
     }
-    .testimonial-section {
-      padding: 2rem 0 1rem 0;
+    .client-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      height: 100%;
+      transition: transform 0.2s;
+      border: 2px solid transparent;
+    }
+    .client-card:hover {
+      transform: translateY(-5px);
+      border-color: #f7c873;
+    }
+    .client-icon {
+      width: 60px;
+      height: 60px;
+      background: #f7c873;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+      color: #0d1b3f;
+    }
+    .login-form {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+    .form-control {
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      border-color: #f7c873;
+      box-shadow: 0 0 0 0.2rem rgba(247, 200, 115, 0.25);
     }
   </style>
 </head>
@@ -162,7 +194,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item">
-            <a class="nav-link active fw-semibold" href="index.html">
+            <a class="nav-link fw-semibold" href="index.html">
               <i class="bi bi-house-door me-1"></i>Home
             </a>
           </li>
@@ -178,10 +210,12 @@
             <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="servicesDropdown">
               <li><a class="dropdown-item" href="services.html"><i class="bi bi-clipboard2-pulse me-2"></i>Veterinary Services</a></li>
               <li><a class="dropdown-item" href="emergency.html"><i class="bi bi-exclamation-triangle me-2"></i>Emergency Care</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="pharmacy.html"><i class="bi bi-capsule me-2"></i>Online Pharmacy</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-semibold" href="client-center.html">
+            <a class="nav-link active fw-semibold" href="client-center.html">
               <i class="bi bi-person-circle me-1"></i>Client Center
             </a>
           </li>
@@ -212,213 +246,152 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <div class="mb-3">
-            <span class="badge bg-danger px-3 py-2 rounded-pill fw-bold">
-              <i class="bi bi-star-fill me-1"></i>Trusted Since 1995
-            </span>
-          </div>
-          <h1 class="display-4 fw-bold mb-3 text-dark">
-            Exceptional Care for Your 
-            <span class="text-warning">Beloved Pets</span>
-          </h1>
-          <p class="lead mb-4 text-muted">
-            At VetCare Veterinary Center, we provide compassionate, comprehensive veterinary care with state-of-the-art technology. Your pet's health and happiness are our top priorities.
-          </p>
-          <div class="d-flex flex-wrap gap-3 mb-4">
-            <div class="d-flex align-items-center">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="fw-semibold">24/7 Emergency Care</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="fw-semibold">Advanced Diagnostics</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="fw-semibold">Compassionate Team</span>
-            </div>
-          </div>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="booking.html" class="btn btn-warning btn-lg fw-bold px-4 py-3 rounded-pill shadow">
-              <i class="bi bi-calendar-check me-2"></i>Book Appointment
-            </a>
-            <a href="emergency.html" class="btn btn-outline-danger btn-lg fw-bold px-4 py-3 rounded-pill">
-              <i class="bi bi-exclamation-triangle me-2"></i>Emergency Care
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-6 text-center position-relative">
-          <div class="position-relative">
-            <img src="https://images.unsplash.com/photo-1587764379873-97837921fd44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Veterinarian caring for a happy dog" 
-                 class="img-fluid rounded-4 shadow-lg" 
-                 style="max-height: 500px; object-fit: cover;">
-            <div class="position-absolute top-0 start-0 bg-warning text-dark p-3 rounded-3 m-3 shadow">
-              <div class="fw-bold">500+</div>
-              <div class="small">Happy Pets</div>
-            </div>
-            <div class="position-absolute bottom-0 end-0 bg-primary text-white p-3 rounded-3 m-3 shadow">
-              <div class="fw-bold">25+</div>
-              <div class="small">Years Experience</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonial-section bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h3 class="fw-bold mb-4">Real Testimonials from Real Clients</h3>
-          <div class="d-flex justify-content-center align-items-center mb-3">
-            <button class="btn btn-outline-secondary btn-sm me-2" disabled>&lt;</button>
-            <div class="px-3">
-              <p class="mb-1">All the pals and staff are the best, great customer service. They make sure you and your pet are well taken care of when you come into the office. I recommend Vetcare
-. Thank you, Vetcare
-.</p>
-              <div class="fw-bold">Marie V.</div>
-              <div class="text-muted" style="font-size:0.9rem;">Reviewed via Google</div>
-            </div>
-            <button class="btn btn-outline-secondary btn-sm ms-2">&gt;</button>
-          </div>
-          <a href="#" class="btn btn-warning">More Reviews &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature Cards -->
-  <section class="py-5 bg-dark-blue">
-    <div class="container">
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <div class="feature-card bg-white p-4 text-center h-100">
-            <div class="feature-icon text-danger mb-2">
-              <i class="bi bi-heart-pulse"></i>
-            </div>
-            <h5 class="fw-bold">Veterinary Services</h5>
-            <p>Diagnostics, surgery, anesthesia, radiology, and more.</p>
-            <a href="#" class="btn btn-outline-warning btn-sm">View Services &rarr;</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card bg-white p-4 text-center h-100">
-            <div class="feature-icon text-primary mb-2">
-              <i class="bi bi-phone"></i>
-            </div>
-            <h5 class="fw-bold">Our Mobile App</h5>
-            <p>Book appointments, get reminders, and more.</p>
-            <a href="#" class="btn btn-outline-warning btn-sm">Get Our App &rarr;</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card bg-white p-4 text-center h-100">
-            <div class="feature-icon text-info mb-2">
-              <i class="bi bi-hospital"></i>
-            </div>
-            <h5 class="fw-bold">Emergency Care</h5>
-            <p>Immediate and effective pet emergency care.</p>
-            <a href="#" class="btn btn-outline-warning btn-sm">Learn More &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Meet the Team Section -->
   <section class="py-5" style="background: #f5f6fa;">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-7 mb-4 mb-md-0">
-          <div class="mb-2 text-danger fw-bold">Meet Our Veterinary Team</div>
-          <h2 class="fw-bold mb-3">Meet the Vetcare
- Veterinary Center Veterinary Team</h2>
-          <p class="mb-4">Our dedicated team is committed to delivering quality veterinary care tailored to the unique needs of your furry family member. With a focus on compassion and client education, we treat your pet as if they were our own, providing personalized attention to address any concerns you may have. Trust us to be your partner in your pet's lifelong wellness journey.</p>
-          <a href="#" class="btn btn-warning fw-bold">Meet Our Team &rarr;</a>
+          <h2 class="fw-bold mb-3">Client Center</h2>
+          <p class="mb-4">Access your pet's medical records, manage appointments, and stay connected with our veterinary team through our secure client portal.</p>
+          <div class="d-flex align-items-center">
+            <i class="bi bi-shield-check text-success me-2" style="font-size: 1.5rem;"></i>
+            <span class="text-muted">Secure, encrypted access to your pet's information</span>
+          </div>
         </div>
         <div class="col-md-5 text-center">
-          <img src="images/labor-union-members-working-together.jpg" alt="Team Photo" class="img-fluid rounded border" style="border-width:3px !important;">
+          <img src="images/labor-union-members-working-together.jpg" alt="Client Center" class="hero-img img-fluid">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Veterinary Services Section -->
-  <section class="py-5" style="background: #5a5a5a;">
+  <!-- Login Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="login-form">
+            <h3 class="fw-bold text-center mb-4">Client Portal Login</h3>
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label fw-bold">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label fw-bold">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="remember">
+                <label class="form-check-label" for="remember">Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-warning fw-bold w-100 mb-3">Sign In</button>
+              <div class="text-center">
+                <a href="#" class="text-decoration-none">Forgot Password?</a>
+                <span class="mx-2">|</span>
+                <a href="#" class="text-decoration-none">New Client Registration</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Features Section -->
+  <section class="py-5 bg-dark-blue text-white">
+    <div class="container">
+      <h3 class="fw-bold text-center mb-5">What You Can Do in Your Client Portal</h3>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="client-card text-center text-dark">
+            <div class="client-icon">
+              <i class="bi bi-calendar-check"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Manage Appointments</h5>
+            <p>Schedule, reschedule, or cancel appointments online. View your upcoming visits and receive reminders.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-card text-center text-dark">
+            <div class="client-icon">
+              <i class="bi bi-file-medical"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Medical Records</h5>
+            <p>Access your pet's complete medical history, vaccination records, and treatment plans.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-card text-center text-dark">
+            <div class="client-icon">
+              <i class="bi bi-chat-dots"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Message Your Vet</h5>
+            <p>Send secure messages to our veterinary team for non-urgent questions and follow-ups.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-card text-center text-dark">
+            <div class="client-icon">
+              <i class="bi bi-credit-card"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Payment History</h5>
+            <p>View your billing history, make payments online, and manage your account balance.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-card text-center text-dark">
+            <div class="client-icon">
+              <i class="bi bi-bell"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Notifications</h5>
+            <p>Receive appointment reminders, vaccination due dates, and important health updates.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-card text-center text-dark">
+            <div class="client-icon">
+              <i class="bi bi-pills"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Prescription Refills</h5>
+            <p>Request prescription refills and view your pet's current medications and dosages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+  <section class="py-5">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-5 mb-4 mb-lg-0 text-center position-relative">
-          <img src="images/businesspeople-meeting-office-hand-shake.jpg" alt="Service Photo" class="img-fluid rounded">
-          <a href="#" class="btn btn-warning fw-bold position-absolute" style="bottom: 20px; left: 50%; transform: translateX(-50%); border-radius: 50px; padding: 0.7rem 1.5rem; white-space: nowrap;">View All Services</a>
-        </div>
-        <div class="col-lg-7">
-          <h3 class="fw-bold text-white mb-2">Veterinary Services in Upper Vetcare
-, MD</h3>
-          <p class="text-white mb-4"><span class="fw-bold">Vetcare
- Veterinary Center</span> is a well-established full-service small animal veterinary hospital, providing comprehensive medical, surgical, and dental care.</p>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="bg-white rounded shadow-sm d-flex align-items-center p-3 mb-2" style="min-height: 80px;">
-                <span class="me-3 fs-2 text-danger"><i class="bi bi-clipboard2-pulse"></i></span>
-                <div>
-                  <div class="fw-bold">Pet Diagnostic and Therapeutic</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="bg-white rounded shadow-sm d-flex align-items-center p-3 mb-2" style="min-height: 80px;">
-                <span class="me-3 fs-2 text-info"><i class="bi bi-bandaid"></i></span>
-                <div>
-                  <div class="fw-bold">Pet Surgical</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="bg-white rounded shadow-sm d-flex align-items-center p-3 mb-2" style="min-height: 80px;">
-                <span class="me-3 fs-2 text-warning"><i class="bi bi-emoji-smile"></i></span>
-                <div>
-                  <div class="fw-bold">Pet Dentistry</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="bg-white rounded shadow-sm d-flex align-items-center p-3 mb-2" style="min-height: 80px;">
-                <span class="me-3 fs-2 text-primary"><i class="bi bi-x-ray"></i></span>
-                <div>
-                  <div class="fw-bold">Pet Radiology Services</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Join Our Team Section -->
-  <section class="py-5" style="background: #fcfcfc;">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-5 text-center mb-4 mb-md-0">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-               alt="Veterinary team collaboration" 
-               class="img-fluid rounded-4 shadow-lg" 
-               style="max-height: 400px; object-fit: cover;">
+        <div class="col-md-6">
+          <h3 class="fw-bold mb-4">New Client Registration</h3>
+          <p class="mb-4">Don't have an account yet? Register for our client portal to access all these features and more.</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Free registration for all clients</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Secure, encrypted data protection</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>24/7 access to your pet's information</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Mobile-friendly interface</li>
+          </ul>
+          <a href="#" class="btn btn-warning fw-bold">Register Now</a>
         </div>
         <div class="col-md-6">
-          <div class="d-flex align-items-center mb-3">
-            <span class="me-2" style="font-size:2.5rem;color:#f7c873;"><i class="bi bi-paw"></i></span>
-            <h2 class="fw-bold mb-0">Join Our Team</h2>
+          <div class="bg-light rounded p-4">
+            <h5 class="fw-bold mb-3">Need Help?</h5>
+            <p class="mb-3">Our support team is here to help you with any questions about the client portal.</p>
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-telephone text-primary me-2"></i>
+              <span>(410) 555-0123</span>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-envelope text-primary me-2"></i>
+              <span>support@vetcare.com</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <i class="bi bi-clock text-primary me-2"></i>
+              <span>Monday - Friday, 8 AM - 6 PM</span>
+            </div>
           </div>
-          <p class="mb-4">We're looking for passionate pet lovers, including veterinarians, technicians, administrative staff, and management. Join our team and help shape our amazing culture.</p>
-          <a href="#" class="btn btn-warning fw-bold">View Open Positions &rarr;</a>
         </div>
       </div>
     </div>
@@ -559,8 +532,28 @@
       });
     });
 
-    // Bootstrap dropdown will handle the behavior automatically
-    // No custom JavaScript needed for dropdown functionality
+    // Enhanced dropdown animations
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      const menu = dropdown.querySelector('.dropdown-menu');
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      
+      toggle.addEventListener('mouseenter', function() {
+        menu.style.display = 'block';
+        setTimeout(() => {
+          menu.style.opacity = '1';
+          menu.style.transform = 'translateY(0)';
+        }, 10);
+      });
+      
+      dropdown.addEventListener('mouseleave', function() {
+        menu.style.opacity = '0';
+        menu.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          menu.style.display = 'none';
+        }, 200);
+      });
+    });
   </script>
 </body>
-</html>
+</html> 
